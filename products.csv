@@ -1,0 +1,90 @@
+Product Name,Product Category,Price,Count
+Apple,Food,0.5,43
+Banana,Food,0.3,56
+Orange,Food,0.4,70
+Milk,Dairy,1.2,50
+Cheese,Dairy,2.5,40
+Butter,Dairy,1.8,35
+Bread,Bakery,1.1,60
+Croissant,Bakery,1.5,45
+Muffin,Bakery,1.0,55
+Chicken,Meat,5.0,25
+Beef,Meat,7.0,20
+Pork,Meat,6.0,30
+Fish,Meat,4.5,28
+Shampoo,Personal Care,3.5,40
+Conditioner,Personal Care,3.8,35
+Soap,Personal Care,1.2,50
+Toothpaste,Personal Care,2.0,45
+Toothbrush,Personal Care,1.5,60
+Laptop,Electronics,700.0,10
+Smartphone,Electronics,500.0,15
+Tablet,Electronics,300.0,20
+Headphones,Electronics,50.0,30
+Keyboard,Electronics,25.0,40
+Mouse,Electronics,20.0,50
+Monitor,Electronics,150.0,25
+TV,Electronics,400.0,12
+Refrigerator,Appliances,800.0,5
+Washing Machine,Appliances,600.0,8
+Microwave,Appliances,100.0,15
+Blender,Appliances,50.0,20
+Vacuum Cleaner,Appliances,120.0,10
+Coffee Maker,Appliances,80.0,18
+T-shirt,Clothing,10.0,50
+Jeans,Clothing,30.0,35
+Jacket,Clothing,50.0,25
+Shoes,Clothing,40.0,30
+Hat,Clothing,15.0,40
+Scarf,Clothing,12.0,45
+Gloves,Clothing,8.0,55
+Socks,Clothing,5.0,60
+Book,Stationery,10.0,100
+Notebook,Stationery,5.0,120
+Pen,Stationery,1.0,200
+Pencil,Stationery,0.5,250
+Eraser,Stationery,0.3,300
+Ruler,Stationery,1.5,150
+Backpack,Stationery,20.0,30
+Stapler,Stationery,2.0,40
+Paper,Stationery,0.1,500
+Chair,Furniture,50.0,15
+Table,Furniture,100.0,10
+Sofa,Furniture,300.0,5
+Bed,Furniture,400.0,4
+Wardrobe,Furniture,200.0,6
+Desk,Furniture,80.0,8
+Lamp,Furniture,30.0,20
+Bicycle,Outdoor,150.0,10
+Tent,Outdoor,100.0,8
+Sleeping Bag,Outdoor,50.0,15
+Camping Stove,Outdoor,40.0,12
+Hiking Boots,Outdoor,80.0,20
+Tennis Racket,Sports,60.0,25
+Basketball,Sports,25.0,30
+Football,Sports,30.0,28
+Baseball Bat,Sports,40.0,20
+Yoga Mat,Sports,20.0,35
+Jump Rope,Sports,10.0,40
+Water Bottle,Sports,8.0,50
+Helmet,Sports,35.0,18
+Guitar,Music,150.0,12
+Piano,Music,800.0,3
+Drums,Music,500.0,5
+Violin,Music,200.0,8
+Flute,Music,100.0,10
+Trumpet,Music,150.0,7
+Saxophone,Music,600.0,4
+Microphone,Music,50.0,20
+Speaker,Music,120.0,15
+Painting,Art,200.0,5
+Sketchbook,Art,15.0,25
+Brushes,Art,20.0,30
+Easel,Art,50.0,10
+Canvas,Art,25.0,20
+Acrylic Paint,Art,30.0,18
+Oil Paint,Art,40.0,12
+Watercolors,Art,25.0,15
+Clay,Art,15.0,25
+Sculpting Tools,Art,35.0,10
+Phone adapter,Electronics,10.0,45
