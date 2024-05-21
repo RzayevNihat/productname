@@ -1,16 +1,17 @@
 import streamlit as st
 import pandas as pd
-
-data_path = "products.csv" 
+import os
+data_path = "products.csv"
+home_dir = os.path.expanduser("~")
+data_path = os.path.join(home_dir, "products.csv")
 try:
     df = pd.read_csv(data_path)
 except FileNotFoundError:
     st.error(f"Error: CSV file '{data_path}' not found. Please create it or update the path.")
     df = pd.DataFrame(columns=["Product Name", "Product Category", "Price", "Count"])
 
-
 def update_product_data(product_name, product_category, price, count):
-    global df  
+    global df
 
     if "Product Name" in df.columns and product_name in df["Product Name"].values:
         index = df.index[df["Product Name"] == product_name].tolist()[0]
@@ -23,6 +24,15 @@ def update_product_data(product_name, product_category, price, count):
         )
         df = pd.concat([df, new_product], ignore_index=True)
         st.success(f"Product '{product_name}' added successfully.")
+
+def delete_product_data(product_name):
+    global df
+
+    if "Product Name" in df.columns and product_name in df["Product Name"].values:
+        df = df[df["Product Name"] != product_name]
+        st.success(f"Product '{product_name}' successfully deleted.")
+    else:
+        st.error(f"Product '{product_name}' not found.")
 
 st.title("Product Management App")
 
@@ -46,9 +56,8 @@ with col4:
 
 if st.button("Add Product"):
     update_product_data(new_product_name, new_product_category, new_product_price, new_product_count)
-
+    # Save the updated data back to the CSV file
     df.to_csv(data_path, index=False)
-
 
 st.sidebar.header("Product Data")
 table_placeholder = st.sidebar.empty()
@@ -60,32 +69,39 @@ if selected_product:
     selected_product_data = df[df["Product Name"] == selected_product]
     st.header(f"Edit Product: {selected_product}")
     
-
     col1, col2 = st.columns(2)
-
 
     with col1:
         edit_product_name = st.text_input("Product Name", selected_product_data["Product Name"].values[0])
 
     with col2:
-        edit_product_category = st.text_input(
-            "Product Category",selected_product_data["Product Category"].values[0]
+        edit_product_category = st.selectbox(
+            "Product Category", df["Product Category"].unique(), 
+            index=list(df["Product Category"].unique()).index(selected_product_data["Product Category"].values[0])
         )
 
-
     col3, col4 = st.columns(2)
-
 
     with col3:
         edit_product_price = st.number_input(
             "Price", min_value=0.0, value=selected_product_data["Price"].values[0]
         )
 
-
     with col4:
         edit_product_count = st.number_input(
             "Count", min_value=0, value=selected_product_data["Count"].values[0]
         )
     
-    if st.button("Update Product"):
-        update
+    col1, col2 = st.columns(2)
+    
+    with col1:
+        if st.button("Update Product"):
+            update_product_data(edit_product_name, edit_product_category, edit_product_price, edit_product_count)
+            # Save the updated data back to the CSV file
+            df.to_csv(data_path, index=False)
+    
+    with col2:
+        if st.button("Delete Product"):
+            delete_product_data(edit_product_name)
+            # Save the updated data back to the CSV file
+            df.to_csv(data_path, index=False)
