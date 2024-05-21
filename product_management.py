@@ -68,7 +68,7 @@ if selected_product:
         edit_product_name = st.text_input("Product Name", selected_product_data["Product Name"].values[0])
 
     with col2:
-        edit_product_category = st.selectbox(
+        edit_product_category = st.text_input(
             "Product Category",selected_product_data["Product Category"].values[0]
         )
 
