@@ -2,8 +2,9 @@ import streamlit as st
 import pandas as pd
 import os
 data_path = "products.csv"
-home_dir = os.path.expanduser("~")
-data_path = os.path.join(home_dir, "products.csv")
+script_dir = os.path.dirname(os.path.abspath(__file__))
+data_path = os.path.join(script_dir, "products.csv")
+
 try:
     df = pd.read_csv(data_path)
 except FileNotFoundError:
