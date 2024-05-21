@@ -69,8 +69,7 @@ if selected_product:
 
     with col2:
         edit_product_category = st.selectbox(
-            "Product Category", df["Product Category"].unique(), 
-            index=list(df["Product Category"].unique()).index(selected_product_data["Product Category"].values[0])
+            "Product Category",selected_product_data["Product Category"].values[0]
         )
 
 
